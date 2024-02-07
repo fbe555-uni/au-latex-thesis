@@ -1,0 +1,52 @@
+\documentclass{au-thesis}
+
+% --------------------------- Document Info -------------------------------------------------------
+\title{Title}
+\subtitle{Subtitle}  % Optional
+
+\author{Author}
+\studentid{xxxxxxxxx}
+
+\newdate{date}{01}{02}{2024}  % Date is specified in three parts to use datetime for formatting
+
+\supervisor{Clever Guy}
+\cosupervisor{Another Guy}
+\department{Department of Things}
+
+\subject{Master Thesis for the M.Sc.\ in Spam at Aarhus University}
+\keywords{Keyword1, Keyword2, Keyword3}
+
+% --------------------------- Document structure --------------------------------------------------
+\begin{document}
+
+% ** Frontmatter **
+\maketitle
+\frontmatter
+\input{frontmatter/00copyright}
+\input{frontmatter/01abstract}
+\input{frontmatter/02acknowledgements}
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+
+
+% ** Mainmatter **
+\mainmatter{}
+\input{chapters/00introduction}
+\input{chapters/01background}
+\input{chapters/98results}
+\input{chapters/99conclusion}
+
+% ** Reference List **
+\printbibliography{}
+
+% ** Appendices **
+\appendix
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\input{appendices/00testappendix}
+
+\backmatter{}
+\end{document}
