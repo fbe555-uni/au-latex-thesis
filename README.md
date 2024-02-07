@@ -19,28 +19,28 @@ editing the .cls file. If you fix this, please upload it and delete this heading
 
 This sections details a few configuration elements that might be of interest.
 
-## Structure
+### Structure
 
 The project is structured as follows:  
 
 - __appendices__:   .tex files for all appendices. Must be included in main.tex  
 - __chapters__:     .tex files for all chapters - can be replaced by a folder for long chapters.
--                   Must be included in the main.tex file.  
+                    Must be included in the main.tex file.  
 - __figures__:      Figures used directly in main. Will most likely just be the seal. See section
--                   on figures.  
+                    on figures.  
 - __frontmatter__:  .tex files for frontmatter (i.e. introduction, acknowledgements, etc.)  
 - _au-thesis.cls_:  The latex class for formatting - Also holds the definition of the custom title
--                   page.  
+                    page.  
 - _main.tex_:       The main file for the overall structure of the document
 - _README.md_:      This file
 - _references.bib_: The bibtex file for the project.
 
-## Date
+### Date
 
 The date of the project is saves as a datetime variable called date. The day, month, and year must
 be set in the main.tex before the document compiles.
 
-## Figures
+### Figures
 
 This template is currently setup to automatically look for figures in a figures folder located in
 the same directory as the .tex file that contains the \includegraphics command. If you wish not to
@@ -53,7 +53,7 @@ use this setup, comment out the following lines from the _au-thesis.cls_ file:
     \renewcommand{\includegraphics}[2][ ]{\latexincludegraphics[#1]{figures/#2}}
     ```
 
-## Title page
+### Title page
 
 The title page of the project is customized in the final section of the au-thesis.cls file, using
 the titling package. This package works by defining pre- and post- hooks for each title element
@@ -62,7 +62,7 @@ All title page elements should be set using the corresponding commands in the ma
 one wishes to alter the layout, read the documentation for the titling package and edit the 
 _au-thesis.cls_ file accordingly.
 
-## Hyperref
+### Hyperref
 
 _au-thesis.cls_ automatically sets the pdf parameters like title and author based on the commands
 in the main file using hyperref, and disables the red boxes around hyperlinks.
