@@ -118,11 +118,16 @@
 }
 
 \preauthor{\large \emph{by}\\ \Large}
-\postauthor{\\ \large \@studentid \\[1.5\baselineskip]
-            % Supervisor and co-supervisor
-            \large \emph{Supervisor:} \\ \@supervisor \\[.5\baselineskip]
-            \large \emph{Co-supervisor:} \\ \@cosupervisor \\
-            }
+\postauthor{%
+  \\ \large \@studentid \\[1.5\baselineskip]
+  % Supervisor
+  \large \emph{Supervisor:} \\ \@supervisor \\[.5\baselineskip]
+  % Co-supervisor, conditional
+  \ifx\@cosupervisor\@empty\else
+    \large \emph{Co-supervisor:} \\ \@cosupervisor \\
+  \fi
+}
+
 
 \renewcommand{\maketitlehookc}{%
     % Seal
