@@ -1,5 +1,7 @@
 \documentclass{au-thesis}
-
+\usepackage{todonotes}
+%The following command creates a 7m wide margin for the todo notes without changing the text width
+\geometry{paperwidth=260mm, right=8cm, marginparwidth=7cm}
 % --------------------------- Document Info -------------------------------------------------------
 \title{Title}
 \subtitle{Subtitle}  % Optional
@@ -18,7 +20,6 @@
 
 % --------------------------- Document structure --------------------------------------------------
 \begin{document}
-
 % ** Frontmatter **
 \maketitle
 \frontmatter
@@ -28,10 +29,10 @@
 
 \tableofcontents
 \clearpage
+\input{listofacronyms}
 \listoffigures
 \clearpage
 \listoftables
-
 
 % ** Mainmatter **
 \mainmatter{}
@@ -40,13 +41,14 @@
 \input{chapters/98results}
 \input{chapters/99conclusion}
 
-% ** Reference List **
-\printbibliography{}
+% ** Backmatter **
+\backmatter{}
 
-% ** Appendices **
+% Reference List
+\printbibliography[heading=bibintoc, title=References]{}
+
+% Appendices 
 \appendix
-%\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \input{appendices/00testappendix}
 
-\backmatter{}
 \end{document}

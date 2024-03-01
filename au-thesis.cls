@@ -8,10 +8,13 @@
 \LoadClass[12pt, a4paper, oneside]{book}
 
 % Dependencies
+\RequirePackage[english]{babel}
+\RequirePackage[nodayofweek]{datetime}
 \RequirePackage[hyphens]{url}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+\RequirePackage[splitrule, bottom]{footmisc}
 \RequirePackage{csquotes}
 \RequirePackage{longtable}
 \RequirePackage{wrapfig}
@@ -26,15 +29,22 @@
 \RequirePackage{lipsum}
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocodex}
-\RequirePackage[english]{babel}
-\RequirePackage[nodayofweek]{datetime}
 
 % ------------------------------- Customization ---------------------------------------------------
 % Margin layout
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+
 % Use references.bib as the bibliography database
-\RequirePackage[backend=biber, style=ieee]{biblatex}
+\RequirePackage[backend=biber, url=false,eprint=false, style=ieee]{biblatex}
 \addbibresource{references.bib}
+\emergencystretch=1em % To prevent overfull lines in bibliography when using ieee style
+\setcounter{biburlnumpenalty}{9000} % If you want to break on URL numbers
+\setcounter{biburllcpenalty}{9000} % If you want to break on URL lower case letters
+\setcounter{biburlucpenalty}{9000} % If you want to break on URL UPPER CASE letters
+
+% Proper handling of bibliography and similar in TOC
+\RequirePackage[nottoc]{tocbibind}
+
 % Automatically look for figures in the figures folder located in the same
 % folder as the tex file containing the includegraphics command.
 \RequirePackage{letltxmacro}
@@ -49,6 +59,10 @@
 \lstset{basicstyle=\ttfamily, mathescape, captionpos=b}
 \crefname{lstlisting}{listing}{listings}
 \Crefname{lstlisting}{Listing}{Listings}
+
+% Abbreviations
+\RequirePackage[printonlyused]{acronym}
+
 
 % -------------------------------- Page layout ----------------------------------------------------
 % Header and footer

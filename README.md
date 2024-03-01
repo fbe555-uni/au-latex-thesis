@@ -23,17 +23,18 @@ This sections details a few configuration elements that might be of interest.
 
 The project is structured as follows:  
 
-- __appendices__:   .tex files for all appendices. Must be included in main.tex  
-- __chapters__:     .tex files for all chapters - can be replaced by a folder for long chapters.
-                    Must be included in the main.tex file.  
-- __figures__:      Figures used directly in main. Will most likely just be the seal. See section
-                    on figures.  
-- __frontmatter__:  .tex files for frontmatter (i.e. introduction, acknowledgements, etc.)  
-- _au-thesis.cls_:  The latex class for formatting - Also holds the definition of the custom title
-                    page.  
-- _main.tex_:       The main file for the overall structure of the document
-- _README.md_:      This file
-- _references.bib_: The bibtex file for the project.
+- __appendices__:        .tex files for all appendices. Must be included in main.tex  
+- __chapters__:          .tex files for all chapters - can be replaced by a folder for long chapters.
+                         Must be included in the main.tex file.  
+- __figures__:           Figures used directly in main. Will most likely just be the seal. See section
+                         on figures.  
+- __frontmatter__:       .tex files for frontmatter (i.e. introduction, acknowledgements, etc.)  
+- _au-thesis.cls_:       The latex class for formatting - Also holds the definition of the custom title
+                         page.  
+- _listofacronyms.tex_:  The .tex file containing acronym definitions  
+- _main.tex_:            The main file for the overall structure of the document  
+- _README.md_:           This file  
+- _references.bib_:      The bibtex file for the project.  
 
 ### Date
 
@@ -61,6 +62,46 @@ the titling package. This package works by defining pre- and post- hooks for eac
 All title page elements should be set using the corresponding commands in the main.tex file, but if
 one wishes to alter the layout, read the documentation for the titling package and edit the 
 _au-thesis.cls_ file accordingly.
+
+### Acronyms
+
+The template includes the _acronym_ package to generate a list of acronyms, and ensure that the full
+term is used once followed by the acronym in parentheses on the first occurrence. The acronyms are
+defined in the file _listofacronyms.tex_.  
+
+#### Example
+
+    ``` latex
+    \section{List of acronyms}
+        \begin{acronym}[test]
+            \acro{na}[NA]{Normal Abbreviation}
+            \acroindefinite{na}{an}{a}
+        \end{acronym}
+
+    \section{Sample}
+        \Ac{na} is an example of a capitalized abbreviation, while \ac{na} wouldn't have been
+        capitalized if it had included the long form. All commands that insert text have a capitalized 
+        version. \Iac{na} has the corrent indefinate article, while \acp{na} makes it plural.
+
+        There are many more commands, so see the documentation if you're missing something.
+    ```
+
+#### Example render
+
+The above would render approximately the following:
+
+##### List of acronyms
+
+NA Normal Abbreviation
+
+##### Sample
+
+Normal Abbreviation (NA) is an example of a capitalized abbreviation, while NA
+wouldn’t have been capitalized if it had included the long form. All commands that
+insert text have a capitalized version. An NA has the corrent indefinate article,
+while NAs makes it plural.  
+There are many more commands, so see the documentation if you’re missing
+something.
 
 ### Hyperref
 
