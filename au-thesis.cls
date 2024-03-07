@@ -53,6 +53,7 @@
 \LetLtxMacro\latexincludegraphics\includegraphics
 % redefine \includegraphics to refer to the subfolder Figures
 \renewcommand{\includegraphics}[2][ ]{\latexincludegraphics[#1]{figures/#2}}
+\RequirePackage{subcaption}
 
 % Listings
 \RequirePackage{listings}
